@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="iyobosaamadin" />
+    <title>First Website</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        color: rgb(20, 13, 93);
+      }
+      h2 {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 600;
+        text-align: justify;
+      }
+      #hamnav {
+        width: 100%;
+        background: white;
+      }
+      ul.sidenav {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        background-color: #f1f1f1;
+        position: relative;
+        height: auto;
+        overflow: auto;
+      }
+
+      ul.sidenav li a {
+        display: flex;
+        flex-grow: 1;
+        flex-basis: 0;
+        float: right;
+        color: #000;
+        padding: 10px;
+        text-decoration: none;
+        text-align: center;
+      }
+
+      .active {
+        background-color: #54526b;
+        color: white;
+      }
+
+      ul.sidenav li a:hover:not(.active) {
+        background-color: #555;
+        color: white;
+      }
+
+      /* HIDE HAMBURGER */
+      #hamnav label,
+      #hamburger {
+        display: none;
+      }
+
+      /* old nav bar
+      nav {
+        text-align: right;
+        margin-left: 70%;
+        margin-top: -20px;
+      }
+
+      .nav {
+        padding-left: 30px;
+        text-decoration: none;
+      }
+        */
+
+      p {
+        text-align: justify;
+      }
+      img {
+        width: 80%;
+      }
+      .button1 {
+        background-color: rgb(238, 241, 240);
+        color: rgb(20, 13, 93);
+        font-weight: bold;
+        border: 1px solid gray;
+        padding: 4px 8px;
+        text-align: center;
+        border-radius: 10px;
+      }
+      .button-row {
+        display: flex;
+        flex-direction: row;
+      }
+      .margin-5 {
+        margin-left: 5%;
+      }
+      .button2 {
+        background-color: dodgerblue;
+        color: rgb(20, 13, 93);
+        font-weight: normal;
+        border: 1px solid dodgerblue;
+        padding: 5px 9px;
+        border-radius: 5px;
+      }
+      .yep {
+        color: white;
+        background-image: url(images/road.jpg);
+        background-position: center center;
+        background-size: 100% 100%;
+      }
+      .row {
+        display: flex;
+        flex-direction: row;
+        height: 100vh;
+      }
+      .width-50 {
+        width: 50%;
+      }
+      .padding-15 {
+        padding: 15px 15px;
+      }
+      .center-car {
+        margin-top: 30%;
+      }
+      .center-text {
+        margin-top: 10%;
+      }
+      a {
+        font-size: 100%;
+      }
+
+      @media (max-width: 768px) {
+        ul.sidenav {
+          background-color: white;
+          z-index: 2;
+        }
+        .active {
+          background-color: white;
+          color: black;
+        }
+        ul.sidenav li a :hover {
+          background-color: white;
+          color: white;
+        }
+        ul.sidenav li a {
+          display: inline-block;
+          width: 50%;
+          text-justify: right;
+        }
+
+        /* SHOW HAMBURGER ICON */
+        #hamnav label {
+          display: flex;
+          float: right;
+          color: white;
+          background: #a02620;
+          font-style: normal;
+          font-size: 1.2em;
+          padding: 10px;
+        }
+        /* TOGGLE SHOW/HIDE MENU */
+        .sidenav {
+          display: none;
+        }
+        #hamnav input:checked ~ .sidenav {
+          display: block;
+        }
+
+        .row {
+          display: flex;
+          flex-direction: row;
+          height: 100vh;
+        }
+        .button1 {
+          font-weight: bold;
+          font-size: 12px;
+        }
+        .button2 {
+          font-weight: normal;
+          font-size: 12px;
+        }
+        h2 {
+          font-size: 22px;
+          text-align: left;
+        }
+        p {
+          font-size: 16px;
+          line-height: 18px;
+          text-align: left;
+        }
+        img {
+          width: 90%;
+          margin-bottom: 50%;
+          padding: 15px 10px;
+        }
+        .yep {
+          color: rgb(20, 13, 93);
+        }
+      }
+      @media (max-width: 480px) {
+        .row {
+          display: flex;
+          flex-direction: row;
+          height: 100vh;
+        }
+        .button1 {
+          font-weight: bold;
+          font-size: 10px;
+        }
+        .button2 {
+          font-weight: normal;
+          font-size: 10px;
+        }
+        h2 {
+          font-size: 18px;
+          text-align: left;
+        }
+        p {
+          font-size: 12px;
+          line-height: 13px;
+          text-align: left;
+        }
+        img {
+          width: 90%;
+          margin-bottom: 50%;
+          padding: 200px 10px;
+        }
+        .yep {
+          color: rgb(20, 13, 93);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <nav id="hamnav">
+        <!--  THE HAMBURGER -->
+        <label for="hamburger">&#9776;</label>
+        <input type="checkbox" id="hamburger" />
+
+        <ul class="sidenav">
+          <li><a class="active" href="#home">Home</a></li>
+          <li><a href="#Services">Services</a></li>
+          <li><a href="#FAQ">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <!-- old nav bar 
+      <nav class="button-row">
+        <a class="nav" href="#" target="_blank">Home</a>
+        <a class="nav" href="#" target="_blank">Services</a>
+        <a class="nav" href="#" target="_blank">FAQ</a>
+        <a class="nav" href="#" target="_blank">Contact</a>&nbsp;&nbsp;
+      </nav> -->
+      <br />
+      <div class="button-row margin-5">
+        <button type="button" class="button1">SomeCompany</button>
+      </div>
+      <br />
+    </section>
+    <div class="row">
+      <div class="width-50 padding-15 margin-5">
+        <h2 class="center-text">The Road Less Travelled</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, earum
+          itaque repellendus nam dolorum esse ipsam! Suscipit ullam nobis
+          voluptatibus sapiente facere nostrum voluptate ad explicabo ratione,
+          tempore iure, aut vitae labore nihil minima quaerat magni sed aliquam!
+          Quod, ut nesciunt. Exercitationem quae quis soluta? Suscipit pariatur
+          architecto beatae blanditiis tenetur temporibus. Earum consequatur,
+          doloremque quia debitis magni optio architecto?
+        </p>
+        <button type="button" class="button2">Start my journey</button>
+      </div>
+      <div class="width-50 padding-15">
+        <img src="images/car.png" alt="a blue car" class="center-car" />
+      </div>
+    </div>
+
+    <section class="yep">
+      <nav id="hamnav">
+        <!--  THE HAMBURGER -->
+        <label for="hamburger">&#9776;</label>
+        <input type="checkbox" id="hamburger" />
+
+        <ul class="sidenav">
+          <li><a class="active" href="#home">Home</a></li>
+          <li><a href="#Services">Services</a></li>
+          <li><a href="#FAQ">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <!-- OLD NAVBAR
+      <nav class="button-row">
+        <a class="nav" href="#" target="_blank">Home</a>
+        <a class="nav" href="#" target="_blank">Services</a>
+        <a class="nav" href="#" target="_blank">FAQ</a>
+        <a class="nav" href="#" target="_blank">Contact</a>
+      </nav> -->
+      <br />
+      <div class="button-row margin-5">
+        <button type="button" class="button1">SomeCompany</button>
+      </div>
+      <div class="row">
+        <div class="margin-5 width-50 padding-15">
+          <h2 class="center-text">The Road Less Travelled</h2>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit quae
+            voluptas, perspiciatis itaque quos corporis laboriosam sapiente
+            consectetur perferendis possimus magni maxime necessitatibus et
+            incidunt quisquam exercitationem, qui dolorem omnis modi soluta,
+            praesentium laudantium? Necessitatibus doloremque ipsa porro! Rem
+            voluptatibus atque officiis ipsam dolorum, totam itaque error nihil
+            asperiores ipsum voluptate voluptatum fugit, sit nostrum sapiente
+            iusto? Vitae, in dolor!
+          </p>
+          <br />
+          <br />
+          <button type="button" class="button2">Start my journey</button>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
